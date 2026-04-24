@@ -8,6 +8,7 @@
 - [Dashboard Market Currency Basis](./dashboard-market-currency-basis.md)
 - [Portfolio Active Holding Deduplication](./portfolio-active-holding-deduplication.md)
 - [Supabase Edge + Yahoo Finance Auth Fix](./supabase-edge-yahoo-auth-fix.md)
+- [Vercel Query Core Resolution Fix](./vercel-query-core-resolution-fix.md)
 - [Yahoo Finance Rate Limit Recovery](./yahoo-rate-limit-recovery.md)
 - [Chatbot Gemini + Yahoo Sync Recovery](./chatbot-gemini-yahoo-integration-fix.md)
 - [Valuation UNKNOWN Handling](./valuation-unknown-handling.md)
