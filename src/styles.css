@@ -1,0 +1,224 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── Executive Wealth Console design system ──
+   §8 of xml예시.md spec mapped to CSS custom properties */
+@theme inline {
+  /* Radius – §8 spacingAndRadius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 24px;
+
+  /* ── Semantic color aliases ── */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* ── Typography – §8 fontSystem ── */
+  --font-sans: "SUIT Variable", "Pretendard Variable", "Noto Sans KR", "IBM Plex Sans KR", system-ui, -apple-system, sans-serif;
+  --font-display: "IBM Plex Sans KR", "Pretendard", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --radius: 12px;
+
+  /* §8 colorPalette – mapped from hex to oklch for Tailwind v4 */
+  /* --color-bg-app: #F6F4EE */
+  --background: oklch(0.965 0.01 85);
+  --foreground: oklch(0.18 0.025 260);
+
+  /* --color-bg-surface: #FFFFFF */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.025 260);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.025 260);
+
+  /* --color-ink-800: #16233B → Primary */
+  --primary: oklch(0.22 0.04 260);
+  --primary-foreground: oklch(0.98 0.01 85);
+
+  /* --color-bg-subtle: #F1EEE7 */
+  --secondary: oklch(0.945 0.012 80);
+  --secondary-foreground: oklch(0.22 0.04 260);
+
+  --muted: oklch(0.93 0.012 80);
+  /* --color-text-secondary: #4B5565 */
+  --muted-foreground: oklch(0.42 0.02 260);
+
+  --accent: oklch(0.93 0.04 75);
+  --accent-foreground: oklch(0.22 0.04 260);
+
+  /* --color-danger: #C84B41 */
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.98 0.01 85);
+
+  /* --color-success: #138A6B */
+  --success: oklch(0.53 0.13 160);
+  --success-foreground: oklch(0.98 0.01 85);
+  /* --color-warning: #B7791F */
+  --warning: oklch(0.62 0.14 75);
+  --warning-foreground: oklch(0.18 0.025 260);
+  /* --color-info: #2C6BED */
+  --info: oklch(0.55 0.18 260);
+  --info-foreground: oklch(0.98 0.01 85);
+
+  /* Brand – §8 */
+  /* --color-accent-gold: #C49A46 */
+  --gold: oklch(0.685 0.115 75);
+  --gold-foreground: oklch(0.18 0.025 260);
+  /* --color-ink-900: #0F1728 */
+  --navy: oklch(0.17 0.035 260);
+  --navy-soft: oklch(0.25 0.04 260);
+
+  /* --color-line: #D6DEE8 */
+  --border: oklch(0.89 0.012 250);
+  --input: oklch(0.89 0.012 250);
+  --ring: oklch(0.685 0.115 75);
+
+  /* Sidebar = navy ink */
+  --sidebar: oklch(0.17 0.035 260);
+  --sidebar-foreground: oklch(0.92 0.015 85);
+  --sidebar-primary: oklch(0.685 0.115 75);
+  --sidebar-primary-foreground: oklch(0.18 0.025 260);
+  --sidebar-accent: oklch(0.25 0.04 260);
+  --sidebar-accent-foreground: oklch(0.96 0.012 85);
+  --sidebar-border: oklch(0.25 0.035 260);
+  --sidebar-ring: oklch(0.685 0.115 75);
+
+  /* §8 shadowRules */
+  --shadow-card: 0 8px 24px rgba(15, 23, 40, 0.06);
+  --shadow-modal: 0 24px 64px rgba(15, 23, 40, 0.20);
+  --shadow-floating: 0 18px 32px rgba(15, 23, 40, 0.24);
+
+  /* §8 statusColorRules */
+  --status-success-bg: #EAF7F2;
+  --status-success-text: #116D56;
+  --status-warning-bg: #FFF5E7;
+  --status-warning-text: #9A6115;
+  --status-error-bg: #FCECEA;
+  --status-error-text: #A63E35;
+  --status-info-bg: #EAF1FF;
+  --status-info-text: #1F56C2;
+}
+
+/* Dark mode – MVP excluded per spec but kept for completeness */
+.dark {
+  --background: oklch(0.18 0.025 260);
+  --foreground: oklch(0.96 0.012 85);
+  --card: oklch(0.22 0.03 260);
+  --card-foreground: oklch(0.96 0.012 85);
+  --popover: oklch(0.22 0.03 260);
+  --popover-foreground: oklch(0.96 0.012 85);
+  --primary: oklch(0.685 0.115 75);
+  --primary-foreground: oklch(0.18 0.025 260);
+  --secondary: oklch(0.27 0.04 260);
+  --secondary-foreground: oklch(0.96 0.012 85);
+  --muted: oklch(0.27 0.04 260);
+  --muted-foreground: oklch(0.72 0.025 260);
+  --accent: oklch(0.27 0.04 260);
+  --accent-foreground: oklch(0.96 0.012 85);
+  --destructive: oklch(0.65 0.19 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { font-family: var(--font-sans); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* §8 fontSystem – Heading font family */
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+  /* §8 fontSystem – Numeric font family with tabular numbers */
+  .num { font-family: var(--font-mono); font-feature-settings: "tnum"; font-variant-numeric: tabular-nums; }
+}
+
+@layer utilities {
+  /* §8 카드 – radius 18px + shadow + border */
+  .surface-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* §10 buttons – primary 44px height */
+  .btn-primary {
+    height: 44px;
+    padding-inline: 16px;
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    transition: filter 0.15s;
+  }
+  .btn-primary:hover { filter: brightness(0.94); }
+  .btn-primary:active { filter: brightness(0.90); }
+  .btn-primary:disabled { opacity: 0.4; pointer-events: none; }
+  .btn-primary:focus-visible { outline: 2px solid #2C6BED; outline-offset: 2px; }
+
+  /* §10 status badges */
+  .badge-success { background: var(--status-success-bg); color: var(--status-success-text); }
+  .badge-warning { background: var(--status-warning-bg); color: var(--status-warning-text); }
+  .badge-error   { background: var(--status-error-bg);   color: var(--status-error-text); }
+  .badge-info    { background: var(--status-info-bg);    color: var(--status-info-text); }
+
+  /* PnL colors */
+  .text-pos { color: #138A6B; }
+  .text-neg { color: #C84B41; }
+
+  /* §15 접근성 – prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

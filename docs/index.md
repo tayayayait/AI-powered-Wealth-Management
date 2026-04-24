@@ -1,0 +1,14 @@
+# Documentation Index
+
+- [AI Chatbot Asset Registration Button](./ai-chatbot-asset-registration.md)
+- [Auth Profile Bootstrap and 406 Handling](./auth-profile-bootstrap.md)
+- [Auth 406 and Favicon 404 Fix](./auth-406-favicon-404-fix.md)
+- [Auth Demo Auto Login](./auth-demo-auto-login.md)
+- [Auth Login Navigation Race Fix](./auth-login-navigation-race-fix.md)
+- [Dashboard Market Currency Basis](./dashboard-market-currency-basis.md)
+- [Portfolio Active Holding Deduplication](./portfolio-active-holding-deduplication.md)
+- [Supabase Edge + Yahoo Finance Auth Fix](./supabase-edge-yahoo-auth-fix.md)
+- [Yahoo Finance Rate Limit Recovery](./yahoo-rate-limit-recovery.md)
+- [Chatbot Gemini + Yahoo Sync Recovery](./chatbot-gemini-yahoo-integration-fix.md)
+- [Valuation UNKNOWN Handling](./valuation-unknown-handling.md)
+- [Dashboard Korean Encoding Recovery](./korean-encoding-recovery.md)
